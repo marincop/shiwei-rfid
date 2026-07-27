@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世瑋RFID 系統整合電腦股份有限公司 | 專屬 RFID 解決方案設計</title>
+    <meta name="description" content="世瑋RFID系統整合電腦股份有限公司，深耕產線管控、物流供應鏈、零售防盜與固定資產管理。提供專業 RFID 標籤選型、硬體建置與 ERP/WMS/MES 系統集成，免費為您量身打造 RFID 智慧化方案。">
+    <meta name="keywords" content="世瑋RFID, RFID系統整合, RFID解決方案, 產線管控, 物流供應鏈, 零售防盜, 標籤選型, RFID讀寫器">
+    
+    <!-- Google Fonts: Outfit (English headings) & Noto Sans TC (Traditional Chinese body/headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-badge">R</span>
+                <span class="logo-text">企業RFID <span class="logo-highlight">整合解決方案</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#advantages" class="nav-link">核心優勢</a>
+                <a href="#scenarios" class="nav-link">應用場景</a>
+                <a href="#process" class="nav-link">導入流程</a>
+                <a href="#designer" class="nav-link">方案規劃器</a>
+                <a href="#contact" class="nav-link">聯絡我們</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="index_en.html" class="lang-switch" id="langSwitch" aria-label="切換語言">
+                    <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span>EN</span>
+                </a>
+                <a href="#designer" class="btn btn-primary btn-header">免費方案設計</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="開啟選單">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">世瑋RFID 系統整合電腦</div>
+                    <h1 class="hero-title">
+                        讓物聯網技術落地<br>
+                        <span class="gradient-text">實現極致自動化</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        深耕製造、物流、零售與資產管理，為您量身打造最高效、高相容性的 RFID 軟硬體整合方案。
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#designer" class="btn btn-primary btn-lg">立即設計您的方案</a>
+                        <a href="#process" class="btn btn-secondary btn-lg">了解導入步驟</a>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Live RFID Scanner Mockup -->
+                <div class="hero-visual">
+                    <div class="rfid-terminal-card">
+                        <div class="card-header">
+                            <div class="terminal-status">
+                                <span class="status-indicator live"></span>
+                                <span>RFID Live Terminal</span>
+                            </div>
+                            <div class="signal-strength">
+                                <span>Signal: 99%</span>
+                                <div class="signal-bars">
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scan-area">
+                            <div class="radar-circle">
+                                <div class="radar-line"></div>
+                                <div class="radar-pulse"></div>
+                                <svg class="rfid-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <path d="M6 9a3 3 0 0 1 0 6"></path>
+                                    <path d="M8 7a6 6 0 0 1 0 10"></path>
+                                    <path d="M18 9a3 3 0 0 0 0 6"></path>
+                                    <path d="M16 7a6 6 0 0 0 0 10"></path>
+                                    <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                                </svg>
+                            </div>
+                            <div class="scan-light"></div>
+                        </div>
+
+                        <div class="scan-results">
+                            <div class="result-stats">
+                                <div class="stat-box">
+                                    <span class="stat-label">讀取總數</span>
+                                    <span class="stat-value" id="scanCount">248</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">辨識率</span>
+                                    <span class="stat-value highlight">100%</span>
+                                </div>
+                            </div>
+                            <div class="scanned-list-wrapper">
+                                <div class="scanned-list" id="scannedList">
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...08F2</span>
+                                        <span class="item-type tag-type-logistics">物流箱</span>
+                                        <span class="item-time">剛剛</span>
+                                    </div>
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...A2C1</span>
+                                        <span class="item-type tag-type-manufacture">半成品 B4</span>
+                                        <span class="item-time">1秒前</span>
+                                    </div>
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...77D4</span>
+                                        <span class="item-type tag-type-retail">防盜標籤</span>
+                                        <span class="item-time">3秒前</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Advantages (核心優勢) -->
+        <section class="advantages-section" id="advantages">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">核心優勢</h2>
+                    <p class="section-subtitle">我們專注於將複雜的 RFID 技術轉化為企業開箱即用的生產力工具</p>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Speedometer icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                                <path d="M12 12m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0"></path>
+                                <path d="M12 12l4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">提升作業效率</h3>
+                        <p class="advantage-desc">支援數百個標籤同時秒級批量讀取與自動化作業流程，縮短 80% 以上的手工盤點與抄寫時間，全面釋放人力。</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Plug icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 10h-4V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v4H2v2h4v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-8h4v-2z"></path>
+                                <path d="M12 12V22"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">可擴展整合</h3>
+                        <p class="advantage-desc">提供標準 API 與中間件（Middleware），無縫對接企業既有的 ERP、WMS、MES 等核心系統，不需推倒重來，保護既有 IT 投資。</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Signal/Radar check icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">高精準識讀</h3>
+                        <p class="advantage-desc">世瑋獨家訊號過濾與防衝突（Anti-collision）演算法，適應金屬、液體等惡劣射頻環境，保證極高的讀取精準度。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Scenarios (應用場景) -->
+        <section class="scenarios-section" id="scenarios">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">應用場景</h2>
+                    <p class="section-subtitle">針對不同行業痛點，提供經過市場驗證的成熟 RFID 應用方案</p>
+                </div>
+
+                <div class="scenarios-grid">
+                    <!-- Scenario 1: Manufacturing -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner manufacture-bg">
+                            <!-- Factory icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 20h20M2 17l3-5h3l3 5h3l3-5h3l3 5M6 12V4h8v8M18 12V8h2v4"></path>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">產線管控</h3>
+                            <p class="scenario-card-desc">在製造流程中追蹤工單與半成品。自動辨識工序，防止組裝錯誤，即時收集生產數據，優化產線平衡並提升良率。</p>
+                            <ul class="scenario-list">
+                                <li>工件防錯與工序指導</li>
+                                <li>在製品（WIP）即時追蹤</li>
+                                <li>模具與生產設備生命週期管理</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 2: Logistics & Warehouse -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner logistics-bg">
+                            <!-- Truck icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">物流供應鏈</h3>
+                            <p class="scenario-card-desc">實現倉庫出入庫自動記錄、貨件動態追蹤與裝箱防錯。縮短收發貨時間，加快倉庫周轉率並提高物流透明度。</p>
+                            <ul class="scenario-list">
+                                <li>棧板與箱級批量進出庫掃描</li>
+                                <li>智能貨架定位與防錯放</li>
+                                <li>越庫配送（Cross-docking）自動化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 3: Retail Security -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner retail-bg">
+                            <!-- Shopping bag icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">零售防盜</h3>
+                            <p class="scenario-card-desc">將商品安全防盜與快速結帳體驗完美結合。減少店內竊盜損失，提供顧客無感支付與即時精準的單品級庫存看板。</p>
+                            <ul class="scenario-list">
+                                <li>RFID EAS 門道防盜報警</li>
+                                <li>自助收銀（Self-checkout）批量掃描</li>
+                                <li>店鋪快速盤點與補貨預警</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow / Process (導入流程) -->
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">導入流程</span>
+                    <h2 class="section-title">我們如何協助您導入</h2>
+                    <p class="section-subtitle">從評估到持續優化，四階段陪您走完 RFID 落地，確保系統發揮最大商業效益。</p>
+                </div>
+
+                <div class="process-stepper">
+                    <div class="process-line"></div>
+                    
+                    <div class="process-step active" data-step="1">
+                        <div class="step-num">01</div>
+                        <div class="step-card">
+                            <h3 class="step-title">需求評估</h3>
+                            <p class="step-desc">世瑋專家深入理解您的實際作業流程與痛點，界定 RFID 導入的最佳範圍、評估可行性，並預估量化回報率（ROI）。</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <div class="step-num">02</div>
+                        <div class="step-card">
+                            <h3 class="step-title">方案設計</h3>
+                            <p class="step-desc">規劃硬體設備位置、天線覆蓋角度、為特定環境選定合適標籤（如抗金屬標籤），並設計軟體系統整合架構。</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="3">
+                        <div class="step-num">03</div>
+                        <div class="step-card">
+                            <h3 class="step-title">系統整合</h3>
+                            <p class="step-desc">進行現場硬體安裝、讀寫器功率調試與屏蔽設計。佈署世瑋中間件，完成與您既有 ERP、WMS 或 MES 系統的對接。</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="4">
+                        <div class="step-num">04</div>
+                        <div class="step-card">
+                            <h3 class="step-title">持續優化</h3>
+                            <p class="step-desc">提供員工操作培訓與完整的售後維護。基於上線後的數據回饋進行動態讀取率優化，保障系統長期高效穩定運作。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RFID Solution Designer Wizard (方案規劃器) -->
+        <section class="designer-section" id="designer">
+            <div class="designer-bg-glow-1"></div>
+            <div class="designer-bg-glow-2"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">互動工具</span>
+                    <h2 class="section-title">RFID 解決方案線上設計</h2>
+                    <p class="section-subtitle">只需回答幾個問題，世瑋智慧演算法將為您量身估算合適的 RFID 硬體、標籤與系統整合架構</p>
+                </div>
+
+                <div class="designer-box">
+                    <!-- Wizard Left Side: Questions -->
+                    <div class="designer-wizard">
+                        <div class="wizard-header">
+                            <div class="wizard-steps-indicator">
+                                <span class="indicator-dot active" data-step="1">1</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="2">2</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="3">3</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="4">4</span>
+                            </div>
+                            <h3 class="wizard-step-title" id="wizardQuestionTitle">步驟 1：選擇您的應用場景</h3>
+                        </div>
+
+                        <div class="wizard-body">
+                            <!-- Step 1 Pane -->
+                            <div class="wizard-pane active" data-pane="1">
+                                <p class="pane-help-text">這能幫助我們理解您的主要業務流程：</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="manufacture" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🏭</span>
+                                            <span class="option-label">製造業產線管控</span>
+                                            <span class="option-sub">追蹤半成品、工件防錯、工時統計</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="logistics">
+                                        <div class="option-content">
+                                            <span class="option-icon">📦</span>
+                                            <span class="option-label">物流與智能倉儲</span>
+                                            <span class="option-sub">庫存批量盤點、快速出入庫、追蹤定位</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="retail">
+                                        <div class="option-content">
+                                            <span class="option-icon">🛍️</span>
+                                            <span class="option-label">零售店鋪與防盜</span>
+                                            <span class="option-sub">EAS防盜報警、快速收銀、門市庫存</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="assets">
+                                        <div class="option-content">
+                                            <span class="option-icon">💼</span>
+                                            <span class="option-label">固定資產盤點</span>
+                                            <span class="option-sub">企業資產查找、出入管控、定期盤點</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 Pane -->
+                            <div class="wizard-pane" data-pane="2">
+                                <p class="pane-help-text">標籤所附著的物品材質會顯著影響無線射頻訊號：</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="metal" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🔩</span>
+                                            <span class="option-label">金屬表面 / 機械零件</span>
+                                            <span class="option-sub">電磁干擾強，需選配專用抗金屬標籤</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="liquid">
+                                        <div class="option-content">
+                                            <span class="option-icon">🧪</span>
+                                            <span class="option-label">液體容器 / 潮濕環境</span>
+                                            <span class="option-sub">水會吸收超高頻訊號，需特殊結構設計</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="standard">
+                                        <div class="option-content">
+                                            <span class="option-icon">📄</span>
+                                            <span class="option-label">紙質 / 塑料 / 紙箱</span>
+                                            <span class="option-sub">標準射頻環境，可使用常規貼紙型標籤</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="fabric">
+                                        <div class="option-content">
+                                            <span class="option-icon">👕</span>
+                                            <span class="option-label">織物 / 衣物 / 軟質材料</span>
+                                            <span class="option-sub">需要可水洗、耐高溫或柔軟耐折標籤</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 Pane -->
+                            <div class="wizard-pane" data-pane="3">
+                                <p class="pane-help-text">我們需要了解讀取設備與標籤之間的最遠操作距離：</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="short" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🎯</span>
+                                            <span class="option-label">近距離讀取 (小於 0.5 米)</span>
+                                            <span class="option-sub">適用於手持貼近、桌面發卡、單點感應</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="mid">
+                                        <div class="option-content">
+                                            <span class="option-icon">📶</span>
+                                            <span class="option-label">中距離讀取 (1 至 3 米)</span>
+                                            <span class="option-sub">適用於流水線感應、中型門禁、工位識別</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="long">
+                                        <div class="option-content">
+                                            <span class="option-icon">🚀</span>
+                                            <span class="option-label">長距離讀取 (3 米以上)</span>
+                                            <span class="option-sub">適用於倉庫大門閘道、車輛管控、大範圍掃描</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 Pane -->
+                            <div class="wizard-pane" data-pane="4">
+                                <p class="pane-help-text">您目前主要的核心管理系統為何？這決定了數據對接的方式：</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="erp" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">💻</span>
+                                            <span class="option-label">既有 ERP 系統 (如 SAP, Oracle, Web)</span>
+                                            <span class="option-sub">需要同步庫存與出入庫過帳數據</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="mes">
+                                        <div class="option-content">
+                                            <span class="option-icon">⚙️</span>
+                                            <span class="option-label">MES 製造執行系統</span>
+                                            <span class="option-sub">需要毫秒級的產線數據交換與控制</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="wms">
+                                        <div class="option-content">
+                                            <span class="option-icon">🗄️</span>
+                                            <span class="option-label">WMS 倉儲管理系統</span>
+                                            <span class="option-sub">需要儲位、庫位綁定與批次收發貨對接</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="none">
+                                        <div class="option-content">
+                                            <span class="option-icon">📱</span>
+                                            <span class="option-label">無既有系統 / 獨立運作</span>
+                                            <span class="option-sub">希望能使用世瑋提供的一站式獨立管理軟體</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-footer">
+                            <button class="btn btn-secondary btn-wizard-back" id="btnWizardBack" disabled>上一步</button>
+                            <button class="btn btn-primary btn-wizard-next" id="btnWizardNext">下一步</button>
+                        </div>
+                    </div>
+
+                    <!-- Wizard Right Side: Dynamic Solution Result -->
+                    <div class="designer-result" id="designerResult">
+                        <div class="result-placeholder" id="resultPlaceholder">
+                            <div class="placeholder-icon">💡</div>
+                            <h4>解決方案即時生成中</h4>
+                            <p>請完成左側問題回答，我們將為您即時計算並繪製最符合您需求的架構與推薦清單。</p>
+                        </div>
+                        
+                        <div class="result-display hidden" id="resultDisplay">
+                            <h4 class="result-title">🎯 為您推薦的專屬 RFID 方案</h4>
+                            
+                            <!-- Dynamic SVG Architecture diagram -->
+                            <div class="result-diagram-container">
+                                <svg class="result-svg-diagram" id="resultSvg" viewBox="0 0 400 160">
+                                    <!-- Will be injected by JS dynamically -->
+                                </svg>
+                            </div>
+
+                            <div class="recommendations">
+                                <div class="rec-group">
+                                    <h5>🏷️ 推薦標籤型式</h5>
+                                    <p id="recTag">載入中...</p>
+                                </div>
+                                <div class="rec-group">
+                                    <h5>📡 推薦硬體配置</h5>
+                                    <p id="recHardware">載入中...</p>
+                                </div>
+                                <div class="rec-group">
+                                    <h5>🔌 系統整合方式</h5>
+                                    <p id="recIntegration">載入中...</p>
+                                </div>
+                            </div>
+
+                            <div class="result-actions">
+                                <button class="btn btn-primary btn-block" id="btnApplySolution">將此方案帶入諮詢表單</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Consultation Booking Form (預約免費導入諮詢) -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <span class="contact-badge">聯絡我們</span>
+                    <h2 class="contact-title">預約免費導入諮詢</h2>
+                    <p class="contact-text">
+                        我們的技術顧問將在 24 小時內與您聯繫，協助現場評估與進一步的樣品測試。您也可以在上方規劃器中生成方案，一鍵帶入表單。
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🏢</span>
+                            <div>
+                                <h5>公司名稱</h5>
+                                <p>世瑋RFID 系統整合電腦股份有限公司</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <div>
+                                <h5>總部地址</h5>
+                                <p>台中市南屯區大墩七街57號11F</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📞</span>
+                            <div>
+                                <h5>諮詢專線</h5>
+                                <p><a href="tel:+886928277449" style="color: inherit; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">+886 928 277 449</a></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">✉️</span>
+                            <div>
+                                <h5>電子信箱</h5>
+                                <p><a href="mailto:marincop@gmail.com" style="color: inherit; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">marincop@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="consultationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formCompany">公司名稱 <span class="required">*</span></label>
+                                <input type="text" id="formCompany" placeholder="請輸入完整公司名稱" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formContact">聯絡人姓名 <span class="required">*</span></label>
+                                <input type="text" id="formContact" placeholder="您的姓名" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formPhone">聯絡電話 <span class="required">*</span></label>
+                                <input type="tel" id="formPhone" placeholder="手機或分機號碼" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail">電子信箱 <span class="required">*</span></label>
+                                <input type="email" id="formEmail" placeholder="name@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formSummary">您的 RFID 需求/規劃方案</label>
+                            <textarea id="formSummary" rows="4" placeholder="請簡述您的應用場景或痛點（若已完成上方方案規劃器，此欄位將自動帶入）"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnSubmitForm">
+                            <span>送出諮詢申請</span>
+                            <svg class="submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-badge">R</span>
+                    <span class="logo-text">企業RFID <span class="logo-highlight">整合解決方案</span></span>
+                </a>
+                <p class="footer-slogan">世瑋RFID系統整合電腦股份有限公司 — 提供最專業的 RFID 讀寫軟硬體與系統整合解決方案，助您精準管理、倍增效率。</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <div class="footer-links">
+                    <h4>解決方案</h4>
+                    <a href="#scenarios">產線管控</a>
+                    <a href="#scenarios">物流供應鏈</a>
+                    <a href="#scenarios">零售防盜</a>
+                    <a href="#scenarios">固定資產盤點</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>關於我們</h4>
+                    <a href="#advantages">核心優勢</a>
+                    <a href="#process">導入流程</a>
+                    <a href="#designer">線上規劃器</a>
+                    <a href="#contact">預約諮詢</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 世瑋RFID 系統整合電腦股份有限公司. 版權所有.</p>
+                <div class="footer-legal">
+                    <a href="#">隱私權政策</a>
+                    <a href="#">使用條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive success popup toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+</body>
+</html>

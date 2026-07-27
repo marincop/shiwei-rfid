@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiwei RFID System Integration | Custom Enterprise RFID Solutions</title>
+    <meta name="description" content="Shiwei RFID System Integration Computer Co., Ltd. specializes in WIP control, logistics supply chain, retail anti-theft, and asset management. We provide professional RFID tag selection, reader installation, and ERP/WMS/MES system integration.">
+    <meta name="keywords" content="Shiwei RFID, RFID System Integration, RFID Solutions, WIP Tracking, Logistics Supply Chain, Retail EAS, RFID Tags, RFID Readers">
+    
+    <!-- Google Fonts: Outfit (English headings) & Noto Sans TC (Traditional Chinese body/headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-badge">R</span>
+                <span class="logo-text">Enterprise RFID <span class="logo-highlight">Solutions</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#advantages" class="nav-link">Advantages</a>
+                <a href="#scenarios" class="nav-link">Scenarios</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#designer" class="nav-link">Planner</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="index.html" class="lang-switch" id="langSwitch" aria-label="Switch Language">
+                    <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span>繁中</span>
+                </a>
+                <a href="#designer" class="btn btn-primary btn-header">Free Design</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">Shiwei RFID System Integration</div>
+                    <h1 class="hero-title">
+                        Bring IoT to Life<br>
+                        <span class="gradient-text">Ultimate Automation</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Deeply rooted in manufacturing, logistics, retail, and asset management. We tailor highly efficient and compatible RFID hardware & software integration solutions.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#designer" class="btn btn-primary btn-lg">Design Your Solution</a>
+                        <a href="#process" class="btn btn-secondary btn-lg">View Steps</a>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Live RFID Scanner Mockup -->
+                <div class="hero-visual">
+                    <div class="rfid-terminal-card">
+                        <div class="card-header">
+                            <div class="terminal-status">
+                                <span class="status-indicator live"></span>
+                                <span>RFID Live Terminal</span>
+                            </div>
+                            <div class="signal-strength">
+                                <span>Signal: 99%</span>
+                                <div class="signal-bars">
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                    <span class="bar fill"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scan-area">
+                            <div class="radar-circle">
+                                <div class="radar-line"></div>
+                                <div class="radar-pulse"></div>
+                                <svg class="rfid-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <path d="M6 9a3 3 0 0 1 0 6"></path>
+                                    <path d="M8 7a6 6 0 0 1 0 10"></path>
+                                    <path d="M18 9a3 3 0 0 0 0 6"></path>
+                                    <path d="M16 7a6 6 0 0 0 0 10"></path>
+                                    <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                                </svg>
+                            </div>
+                            <div class="scan-light"></div>
+                        </div>
+
+                        <div class="scan-results">
+                            <div class="result-stats">
+                                <div class="stat-box">
+                                    <span class="stat-label">Total Scans</span>
+                                    <span class="stat-value" id="scanCount">248</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">Accuracy Rate</span>
+                                    <span class="stat-value highlight">100%</span>
+                                </div>
+                            </div>
+                            <div class="scanned-list-wrapper">
+                                <div class="scanned-list" id="scannedList">
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...08F2</span>
+                                        <span class="item-type tag-type-logistics">Logistics Box</span>
+                                        <span class="item-time">Just now</span>
+                                    </div>
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...A2C1</span>
+                                        <span class="item-type tag-type-manufacture">WIP Part B4</span>
+                                        <span class="item-time">1s ago</span>
+                                    </div>
+                                    <div class="scanned-item">
+                                        <span class="item-tag-id">EPC: E2801191...77D4</span>
+                                        <span class="item-type tag-type-retail">Anti-theft Tag</span>
+                                        <span class="item-time">3s ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Advantages -->
+        <section class="advantages-section" id="advantages">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Core Advantages</h2>
+                    <p class="section-subtitle">We transform complex RFID technology into out-of-the-box productivity tools for businesses.</p>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Speedometer icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                                <path d="M12 12m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0"></path>
+                                <path d="M12 12l4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">Boost Efficiency</h3>
+                        <p class="advantage-desc">Supports simultaneous bulk reading of hundreds of tags in seconds, reducing manual scanning and log time by over 80% to free up workforce.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Plug icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 10h-4V6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v4H2v2h4v8c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-8h4v-2z"></path>
+                                <path d="M12 12V22"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">Scalable Integration</h3>
+                        <p class="advantage-desc">Provides standard APIs and middleware to seamlessly connect with existing ERP, WMS, or MES systems without starting from scratch.</p>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-icon-wrapper">
+                            <!-- Signal/Radar check icon -->
+                            <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-title">High Precision Reading</h3>
+                        <p class="advantage-desc">Proprietary signal filtering and anti-collision algorithms ensure 99.9%+ read accuracy, even in metal or liquid-rich environments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Scenarios -->
+        <section class="scenarios-section" id="scenarios">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Application Scenarios</h2>
+                    <p class="section-subtitle">Proven RFID solutions designed to solve critical industry workflows.</p>
+                </div>
+
+                <div class="scenarios-grid">
+                    <!-- Scenario 1: Manufacturing -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner manufacture-bg">
+                            <!-- Factory icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 20h20M2 17l3-5h3l3 5h3l3-5h3l3 5M6 12V4h8v8M18 12V8h2v4"></path>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">WIP Control</h3>
+                            <p class="scenario-card-desc">Track work orders and semi-finished products. Prevent assembly errors, collect live production data, and boost yield rates.</p>
+                            <ul class="scenario-list">
+                                <li>Workpiece error prevention</li>
+                                <li>Real-time WIP tracking</li>
+                                <li>Mold & tooling lifecycle tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 2: Logistics & Warehouse -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner logistics-bg">
+                            <!-- Truck icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">Logistics & Supply Chain</h3>
+                            <p class="scenario-card-desc">Automated check-in/check-out, container verification, and dispatch. Speed up warehouse turnover and visibility.</p>
+                            <ul class="scenario-list">
+                                <li>Pallet and carton bulk gate scans</li>
+                                <li>Smart shelving storage tracking</li>
+                                <li>Automated cross-docking dispatch</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 3: Retail Security -->
+                    <div class="scenario-card">
+                        <div class="scenario-banner retail-bg">
+                            <!-- Shopping bag icon -->
+                            <svg class="scenario-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <div class="scenario-body">
+                            <h3 class="scenario-card-title">Retail & Anti-Theft</h3>
+                            <p class="scenario-card-desc">Combine inventory tracking with loss prevention. Enable self-checkout bulk scanning and real-time inventory visibility.</p>
+                            <ul class="scenario-list">
+                                <li>RFID EAS gate alert systems</li>
+                                <li>POS self-checkout bulk readers</li>
+                                <li>Fast store stock count & alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow / Process -->
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">How It Works</span>
+                    <h2 class="section-title">Our Implementation Process</h2>
+                    <p class="section-subtitle">From assessment to deployment and continuous optimization, we guide you to successful RFID landing.</p>
+                </div>
+
+                <div class="process-stepper">
+                    <div class="process-line"></div>
+                    
+                    <div class="process-step active" data-step="1">
+                        <div class="step-num">01</div>
+                        <div class="step-card">
+                            <h3 class="step-title">Assessment</h3>
+                            <p class="step-desc">Deeply understand your workflows and pain points to define the optimal RFID scope and project ROI.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <div class="step-num">02</div>
+                        <div class="step-card">
+                            <h3 class="step-title">Solution Design</h3>
+                            <p class="step-desc">Choose correct tags (e.g. anti-metal tags), layout reader locations, antenna angles, and design software architecture.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="3">
+                        <div class="step-num">03</div>
+                        <div class="step-card">
+                            <h3 class="step-title">System Integration</h3>
+                            <p class="step-desc">On-site hardware deployment, reader tuning, and API integration with your ERP/WMS/MES systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="4">
+                        <div class="step-num">04</div>
+                        <div class="step-card">
+                            <h3 class="step-title">Optimization</h3>
+                            <p class="step-desc">Employee training, post-deployment service, and fine-tuning read rates for long-term stability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RFID Solution Designer Wizard -->
+        <section class="designer-section" id="designer">
+            <div class="designer-bg-glow-1"></div>
+            <div class="designer-bg-glow-2"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Interactive Tool</span>
+                    <h2 class="section-title">RFID Online Solution Planner</h2>
+                    <p class="section-subtitle">Answer a few questions and our algorithm will calculate the recommended RFID hardware, tags, and system integration.</p>
+                </div>
+
+                <div class="designer-box">
+                    <!-- Wizard Left Side: Questions -->
+                    <div class="designer-wizard">
+                        <div class="wizard-header">
+                            <div class="wizard-steps-indicator">
+                                <span class="indicator-dot active" data-step="1">1</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="2">2</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="3">3</span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot" data-step="4">4</span>
+                            </div>
+                            <h3 class="wizard-step-title" id="wizardQuestionTitle">Step 1: Choose Your Scenario</h3>
+                        </div>
+
+                        <div class="wizard-body">
+                            <!-- Step 1 Pane -->
+                            <div class="wizard-pane active" data-pane="1">
+                                <p class="pane-help-text">This helps us understand your primary business process:</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="manufacture" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🏭</span>
+                                            <span class="option-label">Manufacturing WIP</span>
+                                            <span class="option-sub">Track assembly status, prevent assembly errors, time tracking.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="logistics">
+                                        <div class="option-content">
+                                            <span class="option-icon">📦</span>
+                                            <span class="option-label">Logistics & Warehouse</span>
+                                            <span class="option-sub">Bulk inventory counts, fast inbound/outbound logging, tracking.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="retail">
+                                        <div class="option-content">
+                                            <span class="option-icon">🛍️</span>
+                                            <span class="option-label">Retail & Theft Prevention</span>
+                                            <span class="option-sub">EAS anti-theft alarms, bulk checkout readers, store stock counts.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-scenario" value="assets">
+                                        <div class="option-content">
+                                            <span class="option-icon">💼</span>
+                                            <span class="option-label">Fixed Asset Tracking</span>
+                                            <span class="option-sub">Enterprise asset audits, gate checkout control, audit reporting.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 Pane -->
+                            <div class="wizard-pane" data-pane="2">
+                                <p class="pane-help-text">The surface material of target items heavily affects radio wave propagation:</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="metal" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🔩</span>
+                                            <span class="option-label">Metal Surface / Parts</span>
+                                            <span class="option-sub">High EM interference. Requires dedicated anti-metal mount tags.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="liquid">
+                                        <div class="option-content">
+                                            <span class="option-icon">🧪</span>
+                                            <span class="option-label">Liquid Containers / Wet</span>
+                                            <span class="option-sub">Water absorbs high frequencies. Requires specialised antenna tuning.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="standard">
+                                        <div class="option-content">
+                                            <span class="option-icon">📄</span>
+                                            <span class="option-label">Paper / Plastic / Carton</span>
+                                            <span class="option-sub">Standard RF environment. Standard thin printable tags are ideal.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-material" value="fabric">
+                                        <div class="option-content">
+                                            <span class="option-icon">👕</span>
+                                            <span class="option-label">Fabric / Apparel / Soft</span>
+                                            <span class="option-sub">Requires soft, flexible tags capable of high-temp wash cycles.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 Pane -->
+                            <div class="wizard-pane" data-pane="3">
+                                <p class="pane-help-text">The maximum distance between the tags and reader hardware:</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="short" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">🎯</span>
+                                            <span class="option-label">Short Range (< 0.5m)</span>
+                                            <span class="option-sub">Close-range scans, desktop checkout pads, single station registration.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="mid">
+                                        <div class="option-content">
+                                            <span class="option-icon">📶</span>
+                                            <span class="option-label">Mid Range (1 to 3m)</span>
+                                            <span class="option-sub">Conveyor scans, mid-range access points, workbench scanning.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-range" value="long">
+                                        <div class="option-content">
+                                            <span class="option-icon">🚀</span>
+                                            <span class="option-label">Long Range (> 3m)</span>
+                                            <span class="option-sub">Warehouse portal gates, vehicle checkups, wide-area audits.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 Pane -->
+                            <div class="wizard-pane" data-pane="4">
+                                <p class="pane-help-text">What is your primary software system? This determines the API integration:</p>
+                                <div class="option-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="erp" checked>
+                                        <div class="option-content">
+                                            <span class="option-icon">💻</span>
+                                            <span class="option-label">Existing ERP System</span>
+                                            <span class="option-sub">SAP, Oracle, or proprietary web interfaces requiring inventory sync.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="mes">
+                                        <div class="option-content">
+                                            <span class="option-icon">⚙️</span>
+                                            <span class="option-label">MES System</span>
+                                            <span class="option-sub">Requires sub-second tag scans and PLC actuators trigger.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="wms">
+                                        <div class="option-content">
+                                            <span class="option-icon">🗄️</span>
+                                            <span class="option-label">WMS System</span>
+                                            <span class="option-sub">Integrates with storage slots, locations, and batch checkouts.</span>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="opt-system" value="none">
+                                        <div class="option-content">
+                                            <span class="option-icon">📱</span>
+                                            <span class="option-label">None / Standalone</span>
+                                            <span class="option-sub">Use Shiwei's turnkey standalone web & mobile software suite.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-footer">
+                            <button class="btn btn-secondary btn-wizard-back" id="btnWizardBack" disabled>Back</button>
+                            <button class="btn btn-primary btn-wizard-next" id="btnWizardNext">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Wizard Right Side: Dynamic Solution Result -->
+                    <div class="designer-result" id="designerResult">
+                        <div class="result-placeholder" id="resultPlaceholder">
+                            <div class="placeholder-icon">💡</div>
+                            <h4>Generating Solution...</h4>
+                            <p>Please complete the questions on the left. We will instantly calculate and render the architecture diagram and recommendations based on your needs.</p>
+                        </div>
+                        
+                        <div class="result-display hidden" id="resultDisplay">
+                            <h4 class="result-title">🎯 Your Recommended RFID Solution</h4>
+                            
+                            <!-- Dynamic SVG Architecture diagram -->
+                            <div class="result-diagram-container">
+                                <svg class="result-svg-diagram" id="resultSvg" viewBox="0 0 400 160">
+                                    <!-- Will be injected by JS dynamically -->
+                                </svg>
+                            </div>
+
+                            <div class="recommendations">
+                                <div class="rec-group">
+                                    <h5>🏷️ Recommended Tag</h5>
+                                    <p id="recTag">Loading...</p>
+                                </div>
+                                <div class="rec-group">
+                                    <h5>📡 Recommended Hardware</h5>
+                                    <p id="recHardware">Loading...</p>
+                                </div>
+                                <div class="rec-group">
+                                    <h5>🔌 System Integration</h5>
+                                    <p id="recIntegration">Loading...</p>
+                                </div>
+                            </div>
+
+                            <div class="result-actions">
+                                <button class="btn btn-primary btn-block" id="btnApplySolution">Apply to Inquiry Form</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Consultation Booking Form -->
+        <section class="contact-section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <span class="contact-badge">Contact Us</span>
+                    <h2 class="contact-title">Book a Free Consultation</h2>
+                    <p class="contact-text">
+                        Our technical consultants will contact you within 24 hours to assist with on-site evaluation and free tag samples. You can also generate your design above to auto-fill the form.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">🏢</span>
+                            <div>
+                                <h5>Company Name</h5>
+                                <p>Shiwei RFID System Integration Computer Co., Ltd.</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <div>
+                                <h5>Headquarters</h5>
+                                <p>11F., No. 57, Dadun 7th St., Nantun Dist., Taichung City 408018, Taiwan</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📞</span>
+                            <div>
+                                <h5>Consulting Line</h5>
+                                <p><a href="tel:+886928277449" style="color: inherit; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">+886 928 277 449</a></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">✉️</span>
+                            <div>
+                                <h5>Email</h5>
+                                <p><a href="mailto:marincop@gmail.com" style="color: inherit; text-decoration: none; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">marincop@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="consultationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formCompany">Company Name <span class="required">*</span></label>
+                                <input type="text" id="formCompany" placeholder="Enter company name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formContact">Contact Person <span class="required">*</span></label>
+                                <input type="text" id="formContact" placeholder="Your name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formPhone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="formPhone" placeholder="Mobile or extension" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail">Email Address <span class="required">*</span></label>
+                                <input type="email" id="formEmail" placeholder="name@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formSummary">RFID Design / Requirements</label>
+                            <textarea id="formSummary" rows="4" placeholder="Briefly describe your workflow and goals (this will be filled automatically if you complete the solution designer above)"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnSubmitForm">
+                            <span>Submit Inquiry</span>
+                            <svg class="submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-badge">R</span>
+                    <span class="logo-text">Enterprise RFID <span class="logo-highlight">Solutions</span></span>
+                </a>
+                <p class="footer-slogan">Shiwei RFID System Integration Computer Co., Ltd. — Providing professional RFID readers, special tags, and system integration solutions to boost your operational control and efficiency.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <div class="footer-links">
+                    <h4>Solutions</h4>
+                    <a href="#scenarios">WIP Control</a>
+                    <a href="#scenarios">Logistics & Supply</a>
+                    <a href="#scenarios">Retail EAS</a>
+                    <a href="#scenarios">Asset Management</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>About Us</h4>
+                    <a href="#advantages">Advantages</a>
+                    <a href="#process">Process</a>
+                    <a href="#designer">Online Planner</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Shiwei RFID System Integration Computer Co., Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive success popup toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+</body>
+</html>
