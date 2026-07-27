@@ -200,6 +200,13 @@ section {
     box-shadow: var(--shadow-glow);
 }
 
+.logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 .logo-highlight {
     color: var(--primary);
 }
