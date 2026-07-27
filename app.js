@@ -1,4 +1,4 @@
-// 企業RFID 整合解決方案 - Interactive Website Functionality
+// 澤銳科技-企業RFID 整合解決方案 - Interactive Website Functionality
 
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
