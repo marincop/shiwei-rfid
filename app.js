@@ -45,7 +45,6 @@ function initHeader() {
             }
         });
     });
-
 }
 
 /* ==========================================================================
@@ -206,11 +205,11 @@ function initRFIDWizard() {
         scenarios: {
             manufacture: {
                 title: isEnglish ? 'Manufacturing WIP Control Solution' : '製造業產線管控方案',
-                tag: isEnglish ? 'Shiwei High-Temp Anti-Metal Tag (Rugged ABS/Ceramic UHF Tag)' : '世瑋高溫抗金屬標籤 (Rugged ABS/Ceramic UHF Tag)',
+                tag: isEnglish ? 'Zerui High-Temp Anti-Metal Tag (Rugged ABS/Ceramic UHF Tag)' : '澤銳科技高溫抗金屬標籤 (Rugged ABS/Ceramic UHF Tag)',
                 tagDesc: isEnglish ? 'Can be welded or screwed to molds or metal trays. Waterproof, oilproof, and heat-resistant up to 200°C.' : '可直接焊接或鎖固於模具、工件金屬托盤，防油防水且耐受高達 200°C 烘烤工藝。',
-                hardware: isEnglish ? 'Shiwei Fixed Industrial Reader (IP67 Class) + Near-field & Circularly Polarized Antennas' : '世瑋 Fixed Industrial Reader (IP67 工業級讀寫器) + 近場與圓極化天線',
+                hardware: isEnglish ? 'Zerui Fixed Industrial Reader (IP67 Class) + Near-field & Circularly Polarized Antennas' : '澤銳科技 Fixed Industrial Reader (IP67 工業級讀寫器) + 近場與圓極化天線',
                 hardwareDesc: isEnglish ? 'Precise directional reading prevents cross-reading of adjacent workstations, ensuring 100% station-accurate tracing.' : '天線精準指向工作站通道，實現單點高精準度過閘感應，防止相鄰工位串讀。',
-                integration: isEnglish ? 'Shiwei Middleware ➡️ Client MES System API' : '世瑋 Middleware 中間件 ➡️ 企業既有 MES 系統 API',
+                integration: isEnglish ? 'Zerui Middleware ➡️ Client MES System API' : '澤銳科技中間件 ➡️ 企業既有 MES 系統 API',
                 integrationDesc: isEnglish ? 'Integrate with PLC controllers to automatically actuate gates upon scanning, syncing data to dashboards in milliseconds.' : '利用 PLC 控制開關，在讀取完成後自動放行閘道，數據毫秒級同步上傳生產看板。',
                 icon: '🏭',
                 tagShort: isEnglish ? 'High-temp metal tag' : '高溫抗金屬硬殼標籤',
@@ -219,11 +218,11 @@ function initRFIDWizard() {
             },
             logistics: {
                 title: isEnglish ? 'Logistics & Warehouse Bulk Scanning Solution' : '倉儲物流快速盤點方案',
-                tag: isEnglish ? 'Shiwei Ultra-High Frequency Logistics Labels (UHF Wet-inlays / Printable Tags)' : '世瑋超高頻物流標籤 (UHF Wet-inlays / Printable Tags)',
+                tag: isEnglish ? 'Zerui Ultra-High Frequency Logistics Labels (UHF Wet-inlays / Printable Tags)' : '澤銳科技超高頻物流標籤 (UHF Wet-inlays / Printable Tags)',
                 tagDesc: isEnglish ? 'Cost-effective printable labels, perfect for bulk roll printing of barcode and EPC code onto boxes or plastic pallets.' : '大批量卷裝出貨，支援現場條碼與 EPC 條碼同步列印貼附於外箱或塑料棧板。',
-                hardware: isEnglish ? 'Shiwei 4-Port Fixed Reader + Smart RFID Portal / Handheld Scanner' : '世瑋 4 通道固定式讀卡器 + 智能 RFID 通道門 (RFID Portal)',
+                hardware: isEnglish ? 'Zerui 4-Port Fixed Reader + Smart RFID Portal / Handheld Scanner' : '澤銳科技 4 通道固定式讀卡器 + 智能 RFID 通道門 (RFID Portal)',
                 hardwareDesc: isEnglish ? 'Deploy portal antennas at warehouse gates to scan 100+ items on a pallet in 3 seconds as the forklift passes.' : '在倉庫大門兩側安裝圓極化高增益天線，當推高機整板通過時，3 秒內自動讀取百件標籤。',
-                integration: isEnglish ? 'Shiwei WMS Middleware ➡️ Inventory API Endpoint' : '世瑋 WMS 中間件 ➡️ 庫存 API 接口',
+                integration: isEnglish ? 'Zerui WMS Middleware ➡️ Inventory API Endpoint' : '澤銳科技 WMS 中間件 ➡️ 庫存 API 接口',
                 integrationDesc: isEnglish ? 'Sync stock status in real-time. Link with WMS to auto-generate inbound/outbound confirmation lists, eliminating manual checkups.' : '貨品出入庫狀態自動流轉，與 WMS 連動生成出入庫預警、複核單，減少人工複驗。',
                 icon: '📦',
                 tagShort: isEnglish ? 'UHF flexible printable label' : 'UHF 柔性印刷貼紙標籤',
@@ -232,11 +231,11 @@ function initRFIDWizard() {
             },
             retail: {
                 title: isEnglish ? 'Smart Retail & Theft Prevention Solution' : '智慧零售與防盜系統方案',
-                tag: isEnglish ? 'Shiwei Retail Clothing Tag / Ultra-thin EAS Sticky Tags' : '世瑋 RFID 服飾掛牌 / 超薄熱敏防盜貼紙',
+                tag: isEnglish ? 'Zerui Retail Clothing Tag / Ultra-thin EAS Sticky Tags' : '澤銳科技服飾掛牌 / 超薄熱敏防盜貼紙',
                 tagDesc: isEnglish ? 'Seamlessly integrates RFID with standard price tags. Features high storage capacity and unique item-level encoding.' : '將 RFID 貼紙融入常規吊牌中，外觀無異，具備大容量單品級唯一編碼。',
                 hardware: isEnglish ? 'EAS Pedestal Antennas + Desktop Checkout Batch Reader' : 'EAS 防盜天線立柱 + 桌面式批量收銀讀寫器',
                 hardwareDesc: isEnglish ? 'Batch-scans multiple items in a basket instantly at the POS. Anti-theft gate rings alarm if unpaid items leave.' : '結帳台可一次讀取整籃商品，消費者自助掃描；大門安裝隱形式或立柱天線，進行防盜過濾。',
-                integration: isEnglish ? 'Store POS System ➡️ Shiwei EAS Alarm Linkage' : '門市 POS 系統 ➡️ 世瑋 EAS 防盜警報系統',
+                integration: isEnglish ? 'Store POS System ➡️ Zerui EAS Alarm Linkage' : '門市 POS 系統 ➡️ 澤銳科技 EAS 防盜警報系統',
                 integrationDesc: isEnglish ? 'Marks items as "Paid" in real-time. Unpaid items crossing the shop gate trigger alarms instantly, avoiding false alerts.' : '收銀台結帳後自動將標籤標記為「已售出」，若未結帳物品出店門，大門警報器將立刻觸發。',
                 icon: '🛍️',
                 tagShort: isEnglish ? 'Retail EAS tag' : '零售防盜超薄熱敏標籤',
@@ -245,11 +244,11 @@ function initRFIDWizard() {
             },
             assets: {
                 title: isEnglish ? 'Fixed Asset Management & Inventory Solution' : '固定資產快速盤點方案',
-                tag: isEnglish ? 'Shiwei Flexible Anti-Metal Tamper-evident Labels' : '世瑋柔性抗金屬防拆標籤 (Flexible Anti-metal Labels)',
+                tag: isEnglish ? 'Zerui Flexible Anti-Metal Tamper-evident Labels' : '澤銳科技柔性抗金屬防拆標籤 (Flexible Anti-metal Labels)',
                 tagDesc: isEnglish ? 'Can be applied to metal chassis (e.g. laptops, servers) or plastic furniture. Tamper-evident layout breaks on tear.' : '可黏貼在金屬外殼（如筆電、伺服器）或非金屬表面，具備撕毀失效防拆設計。',
-                hardware: isEnglish ? 'Shiwei Android High-power Handheld Terminal' : '世瑋 Android 大功率手持盤點槍 (Handheld Terminal)',
+                hardware: isEnglish ? 'Zerui Android High-power Handheld Terminal' : '澤銳科技 Android 大功率手持盤點槍 (Handheld Terminal)',
                 hardwareDesc: isEnglish ? 'Features high-gain polarized antenna. Scans assets within a 5m radius without direct line-of-sight.' : '配備高增益圓極化天線，操作人員手持在辦公室掃描，5米半徑內資產瞬間點齊。',
-                integration: isEnglish ? 'Shiwei Cloud Asset Management System (Web/App Portal)' : '世瑋雲端資產管理系統 (Web/App Portal)',
+                integration: isEnglish ? 'Zerui Cloud Asset Management System (Web/App Portal)' : '澤銳科技雲端資產管理系統 (Web/App Portal)',
                 integrationDesc: isEnglish ? 'Standalone asset management portal. No complex IT integration required. Instant inventory reports and depreciation tracking.' : '獨立資產管理系統，無須繁瑣對接，一鍵匯出盤點差異表，提供完整的折舊與履歷追蹤。',
                 icon: '💼',
                 tagShort: isEnglish ? 'Flexible anti-metal label' : '柔性抗金屬防拆標籤',
@@ -327,22 +326,22 @@ function initRFIDWizard() {
         // 1. Material overrides
         if (materialVal === 'metal' && scenarioVal !== 'manufacture' && scenarioVal !== 'assets') {
             tagRecText = isEnglish 
-                ? `Shiwei Anti-Metal Tag (UHF Anti-Metal Tag)` 
-                : `世瑋抗金屬標籤 (UHF Anti-Metal Tag)`;
+                ? `Zerui Anti-Metal Tag (UHF Anti-Metal Tag)` 
+                : `澤銳科技抗金屬標籤 (UHF Anti-Metal Tag)`;
             tagDescText = isEnglish 
                 ? `[Material Tuning] Specially designated anti-metal absorbent tag to prevent electromagnetic shielding by metal surfaces.` 
                 : `【材質優化】因應物品包含金屬材質，升級為特製吸波抗金屬材質，防止射頻訊號被金屬屏蔽或反射。`;
         } else if (materialVal === 'liquid') {
             tagRecText = isEnglish 
-                ? `Shiwei Liquid-resistant RFID Tag` 
-                : `世瑋液體專用高射頻標籤 (Liquid-resistant Tag)`;
+                ? `Zerui Liquid-resistant RFID Tag` 
+                : `澤銳科技液體專用高射頻標籤 (Liquid-resistant Tag)`;
             tagDescText = isEnglish 
                 ? `[Material Tuning] Designated water-adaptive tags to prevent RF attenuation due to liquid absorption.` 
                 : `【材質優化】因應物品含水/液體，採用特殊波段適應標籤，防止水分吸收無線電波，維持穩定識讀。`;
         } else if (materialVal === 'fabric' && scenarioVal !== 'retail') {
             tagRecText = isEnglish 
-                ? `Shiwei High-Temp Washable PPS/Silicone Tag` 
-                : `世瑋耐高溫水洗 PPS/矽膠標籤`;
+                ? `Zerui High-Temp Washable PPS/Silicone Tag` 
+                : `澤銳科技耐高溫水洗 PPS/矽膠標籤`;
             tagDescText = isEnglish 
                 ? `[Material Tuning] Washable fabric PPS tag designed to withstand high pressure, humidity, and 200+ industrial laundry cycles.` 
                 : `【材質優化】織物洗滌需求，採用防水耐壓、可經受上百次工業洗滌與烘乾的特種軟質標籤。`;
@@ -351,15 +350,15 @@ function initRFIDWizard() {
         // 2. Distance overrides
         if (rangeVal === 'short') {
             hardwareRecText = isEnglish 
-                ? `Shiwei Desktop Near-field Card Issuer / Short-range Antenna` 
-                : `世瑋桌面近場發卡器 / 近距離工作站感應天線`;
+                ? `Zerui Desktop Near-field Card Issuer / Short-range Antenna` 
+                : `澤銳科技桌面近場發卡器 / 近距離工作站感應天線`;
             hardwareDescText = isEnglish 
                 ? `[Range Tuning] Focused within 0.5 meters to prevent crosstalk or false scans of adjacent tags.` 
                 : `【讀取距離調優】聚焦 0.5 米以內極近距離，防止天線功率過大誤讀到旁邊不相干的標籤，實現精確點對點寫入與讀取。`;
         } else if (rangeVal === 'long' && scenarioVal !== 'logistics') {
             hardwareRecText = isEnglish 
-                ? `Shiwei Long-range Fixed Reader + 12dBi High-Gain Antenna` 
-                : `世瑋超長距離固定式讀寫器 + 12dBi 高增益圓極化天線`;
+                ? `Zerui Long-range Fixed Reader + 12dBi High-Gain Antenna` 
+                : `澤銳科技超長距離固定式讀寫器 + 12dBi 高增益圓極化天線`;
             hardwareDescText = isEnglish 
                 ? `[Range Tuning] High-power coverage up to 6-10 meters. Perfect for gates, portals, or vehicle tracking.` 
                 : `【讀取距離調優】提供高達 6-10 米的遠距覆蓋，適用於空曠場域或快速通過大門的車輛與棧板感應。`;
@@ -368,22 +367,22 @@ function initRFIDWizard() {
         // 3. System overrides
         if (systemVal === 'none') {
             integrationRecText = isEnglish 
-                ? `Shiwei Standalone RFID Cloud Management Portal` 
-                : `世瑋一站式 RFID 智慧雲端管理平台`;
+                ? `Zerui Standalone RFID Cloud Management Portal` 
+                : `澤銳科技一站式 RFID 智慧雲端管理平台`;
             integrationDescText = isEnglish 
                 ? `[Turnkey Setup] Deploys a standalone web/mobile application including label printing, inventory logging, and error warnings.` 
-                : `【無痛導入】無需對接既有系統，世瑋為您佈署獨立的 Web 與行動端 App 系統，包含完整的標籤列印、日常盤點、報表分析與異常警告功能。`;
+                : `【無痛導入】無需對接既有系統，澤銳科技為您佈署獨立的 Web 與行動端 App 系統，包含完整的標籤列印、日常盤點、報表分析與異常警告功能。`;
         } else if (systemVal === 'erp' && scenarioVal !== 'assets') {
             integrationRecText = isEnglish 
-                ? `Shiwei Middleware ➡️ ERP Standard API Integration` 
-                : `世瑋中間件 (Shiwei Middleware) ➡️ ERP 標準 API 對接`;
+                ? `Zerui Middleware ➡️ ERP Standard API Integration` 
+                : `澤銳科技中間件 (Zerui Middleware) ➡️ ERP 標準 API 對接`;
             integrationDescText = isEnglish 
                 ? `[System Integration] Standard JSON/XML messaging middleware communicating with ERP (SAP, Oracle) to keep ledger aligned with physical inventory.` 
-                : `【系統對接】世瑋中間件將標籤讀取物理事件進行過濾與打包，轉化為標準 JSON/XML 傳遞至既有 ERP（如 SAP, Oracle），確保帳務庫存與物理庫存一致。`;
+                : `【系統對接】澤銳科技中間件將標籤讀取物理事件進行過濾與打包，轉化為標準 JSON/XML 傳遞至既有 ERP（如 SAP, Oracle），確保帳務庫存與物理庫存一致。`;
         } else if (systemVal === 'mes' && scenarioVal !== 'manufacture') {
             integrationRecText = isEnglish 
-                ? `Shiwei Edge Gateway ➡️ MES API Integration` 
-                : `世瑋高速邊緣計算網關 ➡️ MES API 串接`;
+                ? `Zerui Edge Gateway ➡️ MES API Integration` 
+                : `澤銳科技高速邊緣計算網關 ➡️ MES API 串接`;
             integrationDescText = isEnglish 
                 ? `[System Integration] Edge gateway syncing production metrics to MES in milliseconds, linking with photoelectric cells and alarms.` 
                 : `【系統對接】適用於製造執行系統，配合現場光電感應器，實現毫秒級的高頻數據交換，控制警報與氣缸硬體聯動。`;
@@ -522,7 +521,7 @@ Please contact us to provide detailed hardware selection and project quotation.`
 - 讀取距離：${rangeName}
 - 對接系統：${systemName}
 
-希望世瑋技術專家能為我們進一步評估詳細硬體選型及預估專案報價。`;
+希望澤銳科技技術專家能為我們進一步評估詳細硬體選型及預估專案報價。`;
 
             const formSummary = document.getElementById('formSummary');
             if (formSummary) {
